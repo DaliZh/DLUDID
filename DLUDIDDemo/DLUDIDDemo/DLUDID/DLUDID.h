@@ -11,5 +11,5 @@
 @interface DLUDID : NSObject
 
 + (NSString *)value;
-+ (void)save:(NSString *)uuid;
++ (void)save:(NSString *)udid;
 @end

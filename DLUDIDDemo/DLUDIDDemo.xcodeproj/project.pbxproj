@@ -13,9 +13,9 @@
 		49DFD7431CE316A300721F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DFD7411CE316A300721F74 /* Main.storyboard */; };
 		49DFD7451CE316A300721F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49DFD7441CE316A300721F74 /* Assets.xcassets */; };
 		49DFD7481CE316A300721F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49DFD7461CE316A300721F74 /* LaunchScreen.storyboard */; };
-		49DFD75D1CE316FF00721F74 /* DLUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFD7511CE316FF00721F74 /* DLUDID.m */; };
-		49DFD75E1CE316FF00721F74 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFD7541CE316FF00721F74 /* SSKeychain.m */; };
-		49DFD75F1CE316FF00721F74 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFD7561CE316FF00721F74 /* SSKeychainQuery.m */; };
+		49DFD7761CE347E200721F74 /* DLUDID.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFD7701CE347E200721F74 /* DLUDID.m */; };
+		49DFD7771CE347E200721F74 /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFD7731CE347E200721F74 /* SSKeychain.m */; };
+		49DFD7781CE347E200721F74 /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 49DFD7751CE347E200721F74 /* SSKeychainQuery.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +29,12 @@
 		49DFD7441CE316A300721F74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49DFD7471CE316A300721F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		49DFD7491CE316A300721F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		49DFD7501CE316FF00721F74 /* DLUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLUDID.h; sourceTree = "<group>"; };
-		49DFD7511CE316FF00721F74 /* DLUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLUDID.m; sourceTree = "<group>"; };
-		49DFD7531CE316FF00721F74 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		49DFD7541CE316FF00721F74 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		49DFD7551CE316FF00721F74 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		49DFD7561CE316FF00721F74 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
+		49DFD76F1CE347E200721F74 /* DLUDID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLUDID.h; sourceTree = "<group>"; };
+		49DFD7701CE347E200721F74 /* DLUDID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLUDID.m; sourceTree = "<group>"; };
+		49DFD7721CE347E200721F74 /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
+		49DFD7731CE347E200721F74 /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
+		49DFD7741CE347E200721F74 /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
+		49DFD7751CE347E200721F74 /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 		49DFD7371CE316A300721F74 /* DLUDIDDemo */ = {
 			isa = PBXGroup;
 			children = (
-				49DFD74F1CE316FF00721F74 /* DLUUID */,
+				49DFD76E1CE347E200721F74 /* DLUDID */,
 				49DFD73B1CE316A300721F74 /* AppDelegate.h */,
 				49DFD73C1CE316A300721F74 /* AppDelegate.m */,
 				49DFD73E1CE316A300721F74 /* ViewController.h */,
@@ -89,23 +89,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		49DFD74F1CE316FF00721F74 /* DLUUID */ = {
+		49DFD76E1CE347E200721F74 /* DLUDID */ = {
 			isa = PBXGroup;
 			children = (
-				49DFD7501CE316FF00721F74 /* DLUDID.h */,
-				49DFD7511CE316FF00721F74 /* DLUDID.m */,
-				49DFD7521CE316FF00721F74 /* SSKeychain */,
+				49DFD76F1CE347E200721F74 /* DLUDID.h */,
+				49DFD7701CE347E200721F74 /* DLUDID.m */,
+				49DFD7711CE347E200721F74 /* SSKeychain */,
 			);
-			path = DLUUID;
+			path = DLUDID;
 			sourceTree = "<group>";
 		};
-		49DFD7521CE316FF00721F74 /* SSKeychain */ = {
+		49DFD7711CE347E200721F74 /* SSKeychain */ = {
 			isa = PBXGroup;
 			children = (
-				49DFD7531CE316FF00721F74 /* SSKeychain.h */,
-				49DFD7541CE316FF00721F74 /* SSKeychain.m */,
-				49DFD7551CE316FF00721F74 /* SSKeychainQuery.h */,
-				49DFD7561CE316FF00721F74 /* SSKeychainQuery.m */,
+				49DFD7721CE347E200721F74 /* SSKeychain.h */,
+				49DFD7731CE347E200721F74 /* SSKeychain.m */,
+				49DFD7741CE347E200721F74 /* SSKeychainQuery.h */,
+				49DFD7751CE347E200721F74 /* SSKeychainQuery.m */,
 			);
 			path = SSKeychain;
 			sourceTree = "<group>";
@@ -182,11 +182,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49DFD7401CE316A300721F74 /* ViewController.m in Sources */,
-				49DFD75D1CE316FF00721F74 /* DLUDID.m in Sources */,
+				49DFD7761CE347E200721F74 /* DLUDID.m in Sources */,
 				49DFD73D1CE316A300721F74 /* AppDelegate.m in Sources */,
 				49DFD73A1CE316A300721F74 /* main.m in Sources */,
-				49DFD75F1CE316FF00721F74 /* SSKeychainQuery.m in Sources */,
-				49DFD75E1CE316FF00721F74 /* SSKeychain.m in Sources */,
+				49DFD7781CE347E200721F74 /* SSKeychainQuery.m in Sources */,
+				49DFD7771CE347E200721F74 /* SSKeychain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +339,7 @@
 				49DFD74E1CE316A300721F74 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

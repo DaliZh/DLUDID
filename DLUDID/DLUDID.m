@@ -100,7 +100,12 @@ static NSString *_udid;
     if (!pb) {
         return nil;
     }
-    return [pb valueForPasteboardType:kUDIDKey];
+    id data = [pb dataForPasteboardType:kUDIDKey];
+    NSString *udid = nil;
+    if (data) {
+        udid = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    }
+    return udid;
 }
 
 /**
@@ -111,7 +116,8 @@ static NSString *_udid;
 + (void)saveUDIDToPasteboard:(NSString *)udid {
     UIPasteboard *pb = [UIPasteboard pasteboardWithName:kUDIDService create:YES];
     [pb setPersistent:YES];
-    [pb setValue:udid forPasteboardType:kUDIDKey];
+    NSData *data = [udid dataUsingEncoding:NSUTF8StringEncoding];
+    [pb setData:data forPasteboardType:kUDIDKey];
 }
 
 #pragma mark - NSUserDefaults
@@ -161,6 +167,9 @@ static NSString *_udid;
     if (DL_IS_STR_NIL(_udid)) _udid = [[self class] appleIDFA];
     if (DL_IS_STR_NIL(_udid)) _udid = [[self class] appleIDFV];
     if (DL_IS_STR_NIL(_udid)) _udid = [[self class] randomUDID];
+    // 去掉字符中的'-'
+    _udid = [_udid stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    
     [[self class] save:_udid];
     return _udid;
 }

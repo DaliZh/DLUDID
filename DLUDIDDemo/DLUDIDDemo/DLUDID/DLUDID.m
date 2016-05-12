@@ -16,7 +16,7 @@
 
 #define DL_IS_STR_NIL(objStr) (![objStr isKindOfClass:[NSString class]] || objStr == nil || [objStr length] <= 0)
 
-static NSString *_udid;
+static NSString *_udidCache;
 
 @implementation DLUDID
 
@@ -76,7 +76,7 @@ static NSString *_udid;
  *
  *  @return UDID
  */
-+ (NSString *)UDIDInKeychain {
++ (NSString *)udidInKeychain {
     return [SSKeychain passwordForService:kUDIDService account:kUDIDKey];
 }
 
@@ -95,7 +95,7 @@ static NSString *_udid;
  *
  *  @return UDID
  */
-+ (NSString *)UDIDInPasteboard {
++ (NSString *)udidInPasteboard {
     UIPasteboard *pb = [UIPasteboard pasteboardWithName:kUDIDService create:NO];
     if (!pb) {
         return nil;
@@ -126,7 +126,7 @@ static NSString *_udid;
  *
  *  @return UDID
  */
-+ (NSString *)UDIDInUserDefaults {
++ (NSString *)udidInUserDefaults {
     return [[NSUserDefaults standardUserDefaults] objectForKey:kUDIDKey];
 }
 
@@ -160,18 +160,18 @@ static NSString *_udid;
  */
 + (NSString *)value {
     // get exists value
-    if (DL_IS_STR_NIL(_udid)) _udid = [[self class] UDIDInKeychain];
-    if (DL_IS_STR_NIL(_udid)) _udid = [[self class] UDIDInPasteboard];
-    if (DL_IS_STR_NIL(_udid)) _udid = [[self class] UDIDInUserDefaults];
+    if (DL_IS_STR_NIL(_udidCache)) _udidCache = [self udidInKeychain];
+    if (DL_IS_STR_NIL(_udidCache)) _udidCache = [self udidInPasteboard];
+    if (DL_IS_STR_NIL(_udidCache)) _udidCache = [self udidInUserDefaults];
     // generate new value
-    if (DL_IS_STR_NIL(_udid)) _udid = [[self class] appleIDFA];
-    if (DL_IS_STR_NIL(_udid)) _udid = [[self class] appleIDFV];
-    if (DL_IS_STR_NIL(_udid)) _udid = [[self class] randomUDID];
+    if (DL_IS_STR_NIL(_udidCache)) _udidCache = [self appleIDFA];
+    if (DL_IS_STR_NIL(_udidCache)) _udidCache = [self appleIDFV];
+    if (DL_IS_STR_NIL(_udidCache)) _udidCache = [self randomUDID];
     // 去掉字符中的'-'
-    _udid = [_udid stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    _udidCache = [_udidCache stringByReplacingOccurrencesOfString:@"-" withString:@""];
     
-    [[self class] save:_udid];
-    return _udid;
+    [[self class] save:_udidCache];
+    return _udidCache;
 }
 
 @end

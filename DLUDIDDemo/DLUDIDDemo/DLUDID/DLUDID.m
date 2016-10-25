@@ -35,6 +35,10 @@ static NSString *_udidCache;
         SEL advertisingIdentifierSelector = NSSelectorFromString(@"advertisingIdentifier");
         NSUUID *advertisingIdentifier = ((NSUUID* (*)(id, SEL))[sharedManager methodForSelector:advertisingIdentifierSelector])(sharedManager, advertisingIdentifierSelector);
         idfa = [advertisingIdentifier UUIDString];
+        // Beginning in iOS 10, when a user enables “Limit Ad Tracking”, IDFA get a noavailable value
+        if ([idfa isEqualToString:@"00000000-0000-0000-0000-000000000000"]) {
+            idfa = nil;
+        }
     }
     return idfa;
 }
